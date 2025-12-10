@@ -1,6 +1,6 @@
 import { useCompare } from "./app/fooks/useCompare";
 import { ProgressBar } from "./app/components/ProgressBar";
-import { ColumnSelector } from "./app/components/ColumnSelector";
+import DiffViewer from "./app/components/DiffViewer";
 
 const App = () => {
   const {
@@ -56,7 +56,9 @@ const App = () => {
 
         {/* Compare button */}
         <button
-          onClick={() => runCompare(["id"], ["name", "price"])}
+          onClick={() =>
+            runCompare(["タグ名"], ["アイテム名", "装置", "I/Oデバイス"])
+          }
           disabled={loading}
           className={`
             px-4 py-2 rounded-lg text-white font-medium
@@ -79,21 +81,7 @@ const App = () => {
         {/* Result / Error */}
         {error && <div className="text-red-600 text-sm">{error}</div>}
 
-        {result && (
-          <div className="text-sm text-gray-700 space-y-1">
-            <div>
-              追加: <span className="font-semibold">{result.added.length}</span>
-            </div>
-            <div>
-              削除:{" "}
-              <span className="font-semibold">{result.removed.length}</span>
-            </div>
-            <div>
-              変更:{" "}
-              <span className="font-semibold">{result.modified.length}</span>
-            </div>
-          </div>
-        )}
+        {result && <DiffViewer result={result} />}
       </div>
     </div>
   );

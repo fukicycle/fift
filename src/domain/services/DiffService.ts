@@ -41,8 +41,8 @@ export class DiffService {
       percent: 0,
       message: "変更前ファイルのインデックスを作成中",
     });
-    const oldMap = this.buildMap(oldRows);
     await this.yieldToEventLoop();
+    const oldMap = this.buildMap(oldRows);
 
     progress({
       phase: "buildOldMap",
@@ -87,9 +87,8 @@ export class DiffService {
             newRow,
             changes,
           });
-        } else {
-          oldMap.delete(key);
         }
+        oldMap.delete(key);
       }
       processed++;
 
