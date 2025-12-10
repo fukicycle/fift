@@ -224,10 +224,10 @@ const App = () => {
   }, [step, result]);
 
   return (
-    <div className="w-full min-h-screen bg-gray-50 flex flex-row items-start py-8">
-      <div className="flex flex-row w-full max-w-6xl mx-auto">
+    <div className="w-full min-h-screen bg-gray-50 flex flex-row items-start">
+      <div className="flex flex-row w-full mx-auto p-8 overflow-hidden gap-4">
         {/* 左側：縦型手順バー */}
-        <div className="flex flex-col items-start gap-4 pr-8 pt-2 min-w-[280px]">
+        <div className="flex flex-col items-start gap-4">
           <h2 className="text-2xl font-bold text-gray-800 mb-4 tracking-tight">
             CSV/TSV 比較ツール
           </h2>
@@ -265,7 +265,7 @@ const App = () => {
           ))}
         </div>
         {/* 右側：メイン画面 */}
-        <div className="flex-1 bg-white shadow-xl rounded-2xl p-8 ml-2 space-y-8 border border-gray-100 min-h-[500px]">
+        <div className="flex-1 bg-white shadow-xl rounded-2xl p-8 ml-2 space-y-8 border border-gray-100 min-h-[500px] overflow-auto">
           {/* ステップ1: 左ファイル選択 */}
           {step === 1 && (
             <div>
