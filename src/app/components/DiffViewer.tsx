@@ -1,9 +1,5 @@
 import { useState } from "react";
-import type {
-  ColumnChange,
-  DiffResult,
-  ModifiedRow,
-} from "../../domain/models/DiffResult";
+import type { DiffResult, ModifiedRow } from "../../domain/models/DiffResult";
 import type { Row } from "../../domain/models/Row";
 
 interface Props {
