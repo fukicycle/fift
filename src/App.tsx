@@ -392,6 +392,14 @@ const App = () => {
               <div className="mb-4 text-base font-semibold">
                 比較したいカラムを選択してください（複数選択可）
               </div>
+              <button
+                type="button"
+                className="mb-4 px-4 py-2 bg-green-500 text-white rounded-lg font-bold shadow hover:bg-green-600 transition-colors"
+                onClick={() => setSelectedCompare(columns)}
+                disabled={columns.length === 0}
+              >
+                一括選択
+              </button>
               <div className="flex gap-3 flex-wrap">
                 {columns.map((col) => (
                   <label
